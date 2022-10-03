@@ -3,6 +3,7 @@ import sys
 from myhtable_search import myhtable_index_search, myhtable_create_index
 from words import filelist, words, results
 
+
 class Htable():
 
     def __init__(self, rootdir):

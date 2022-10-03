@@ -16,7 +16,7 @@ def myhtable_create_index(files):
     index = htable(4011)
 
     for file_idx, file in enumerate(files):
-        
+
         terms = words(get_text(file))
         for term in terms:
             term_files = htable_get(index, term)
@@ -26,7 +26,6 @@ def myhtable_create_index(files):
                 term_files.add(file_idx)
 
     return index
-
 
 
 def myhtable_index_search(files, index, terms):
@@ -39,16 +38,11 @@ def myhtable_index_search(files, index, terms):
 
     if file_idxes is None:
         return []
-    
+
     for term in terms:
         term_set = htable_get(index, term)
         if term_set is None:
             return []
         file_idxes = file_idxes.intersection(term_set)
 
-    return [file for idx,file in enumerate(files) if idx in file_idxes]
-
-  
-
-
-
+    return [file for idx, file in enumerate(files) if idx in file_idxes]

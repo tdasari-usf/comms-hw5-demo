@@ -3,9 +3,11 @@ A hashtable represented as a list of lists with open hashing.
 Each bucket is a list of (key,value) tuples
 """
 
+
 def htable(nbuckets):
     """Return a list of nbuckets lists"""
     return [[] for _ in range(nbuckets)]
+
 
 def hashcode(o):
     """
@@ -22,6 +24,7 @@ def hashcode(o):
         return h
     else:
         return None
+
 
 def bucket_indexof(table, key):
     """
@@ -56,7 +59,7 @@ def htable_put(table, key, value):
     if idx is None:
         table[bucket_idx].append((key, value))
     else:
-        #repalce
+        # repalce
         table[bucket_idx][idx] = (key, value)
 
 
@@ -73,7 +76,7 @@ def htable_get(table, key):
         return None
 
     bucket_idx = hashcode(key) % len(table)
-                                 
+
     for data_item in table[bucket_idx]:
         if data_item[0] == key:
             return data_item[1]
@@ -97,7 +100,7 @@ def htable_buckets_str(table):
     comma = ","
 
     for idx, bucket in enumerate(table):
-        idx_padded  = str(idx).rjust(4, '0')
+        idx_padded = str(idx).rjust(4, '0')
         output += idx_padded
 
         if len(bucket) == 0:
@@ -105,17 +108,18 @@ def htable_buckets_str(table):
         else:
             output += arrow
 
-            for idx_bucket,(k,v) in enumerate(bucket):
+            for idx_bucket, (k, v) in enumerate(bucket):
                 k, v = str(k), str(v)
                 if idx_bucket == len(bucket) - 1:
                     output += k + ":" + v
                     continue
-                
+
                 output += k + ":" + v + comma + space
-                
+
             output += new_line
 
     return output
+
 
 def htable_str(table):
     """
@@ -129,13 +133,8 @@ def htable_str(table):
     for bucket in table:
         for k, v in bucket:
             output += str(k) + ":" + str(v) + ", "
-    
+
     output = output.strip(", ")
     output += "}"
 
     return output
-
-
-
-
-

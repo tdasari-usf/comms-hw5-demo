@@ -4,16 +4,16 @@ import string
 
 
 def filelist(root):
-    
+
     all_files = []
-    
+
     for item in os.listdir(root):
         joined_path = os.path.join(root, item)
         item_path = os.path.abspath(joined_path)
 
         if os.path.isdir(item_path):
-            all_files = all_files +  filelist(item_path)
-            
+            all_files = all_files + filelist(item_path)
+
         elif os.path.isfile(item_path) and item.endswith('.txt'):
             all_files.append(item_path)
 
@@ -38,12 +38,14 @@ def words(text):
     Lowercase all words
     """
     regex = re.compile('[' + re.escape(string.punctuation) + '0-9\\r\\t\\n]')
-    nopunct = regex.sub(" ", text)  # delete stuff but leave at least a space to avoid clumping together
+    # delete stuff but leave at least a space to avoid clumping together
+    nopunct = regex.sub(" ", text)
     words = nopunct.split(" ")
     words = [w for w in words if len(w) > 2]  # ignore a, an, to, at, be, ...
     words = [w.lower() for w in words]
     # print words
     return words
+
 
 def filenames(docs):
     """Return just the filenames from list of fully-qualified filenames"""
@@ -68,7 +70,8 @@ def results(docs, terms):
         summary = ""
         n = 0
         for line in lines:
-            if n>2: break # show 2 lines at most
+            if n > 2:
+                break  # show 2 lines at most
             line_words = words(line)
             if set(line_words).intersection(terms):
                 for w in line_words:
@@ -79,7 +82,7 @@ def results(docs, terms):
                     else:
                         summary += w
                 summary += "<br>"
-                n+=1
+                n += 1
         result = """
         <p><a href="file://%s">%s</a><br>
         %s<br>
@@ -92,4 +95,4 @@ def results(docs, terms):
     %s
     </body>
     </html>
-    """ % (" ".join(terms),ndocs,body)
+    """ % (" ".join(terms), ndocs, body)
