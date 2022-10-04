@@ -32,7 +32,7 @@ if __name__ == '__main__':
     while True:
         terms = input("Search terms: ")
 
-        if terms == "end":
+        if terms == "0":
             break
 
         else:
