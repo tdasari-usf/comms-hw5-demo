@@ -26,6 +26,7 @@ python demo.py
 You can enter the terms you would like to look up in the data set, after which the hashtable gets created, and then directed to a html
 containing the terms, and filenames.
 
-<not in detail>
 
 #### Conclusion:
+
+In many situations, hash tables turn out to be more efficient than search trees or any other table lookup structure. For this reason, they are widely used in many kinds of computer softwares, particularly for associative arrays, database indexing, caches and sets.
