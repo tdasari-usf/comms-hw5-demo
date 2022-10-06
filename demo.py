@@ -1,7 +1,7 @@
 import webbrowser
 import sys
-from myhtable_search import myhtable_index_search, myhtable_create_index
-from words import filelist, words, results
+from hashtable.myhtable_search import myhtable_index_search, myhtable_create_index
+from hashtable.words import filelist, words, results
 
 
 class Htable():
