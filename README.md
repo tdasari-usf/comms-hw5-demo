@@ -1,6 +1,6 @@
 # HashTables
 
-Team - Ben Chen, Jessica Wang, Tejaswi S Dasari.
+Team - Ben Chen, Jessica Wang, Tejaswi Samrat Dasari.
 
 **HashTables** <basic definintion>
 
