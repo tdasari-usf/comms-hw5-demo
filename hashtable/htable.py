@@ -1,8 +1,3 @@
-"""
-A hashtable represented as a list of lists with open hashing.
-Each bucket is a list of (key,value) tuples
-"""
-
 
 def htable(nbuckets):
     """Return a list of nbuckets lists"""
@@ -11,7 +6,7 @@ def htable(nbuckets):
 
 def hashcode(o):
     """
-    Return a hashcode for strings and integers; all others return None
+    Returns a hashcode for strings and integers; all others return None
     For integers, just return the integer value.
     For strings, perform operation h = h*31 + ord(c) for all characters in the string
     """
@@ -28,8 +23,7 @@ def hashcode(o):
 
 def bucket_indexof(table, key):
     """
-    You don't have to implement this, but I found it to be a handy function.
-    Return the index of the element within a specific bucket; the bucket is:
+    Returns the index of the element within a specific bucket; the bucket is:
     table[hashcode(key) % len(table)]. You have to linearly
     search the bucket to find the tuple containing key.
     """

@@ -1,7 +1,3 @@
-# Got slate magazine data from http://www.anc.org/data/oanc/contents/
-# rm'd .xml, .anc files, leaving just .txt
-# 4534 files in like 55 subdirs
-
 from hashtable.htable import *
 from hashtable.words import get_text, words, filelist
 
@@ -30,8 +26,7 @@ def myhtable_create_index(files):
 
 def myhtable_index_search(files, index, terms):
     """
-    This does the exact same thing as index_search() except that it uses your htable.
-    I.e., use htable_get(index, w) not index[w].
+    Returns the file names which contain all the terms
     """
 
     if len(terms) < 1:
