@@ -15,6 +15,17 @@ Diagramatical view of hashtable
 
 #### Implementation of HashTable: 
 
+We implemented a hashtable to retrieve the files containting given terms(words) from a dataset of raw txt files.
+
+To run a demo:
+
+```
+python demo.py
+```
+
+You can enter the terms you would like to look up in the data set, after which the hashtable gets created, and then directed to a html
+containing the terms, and filenames.
+
 <not in detail>
 
 #### Conclusion:
