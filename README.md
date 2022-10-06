@@ -8,6 +8,7 @@ Hash Tables, also known as hashmaps, is a data structure that implements the sto
 
 Hashtables are extensively used for their faster retrievability. On average the time complexity of a hashtable is O(1). Ideally a hash function should  associate each value to a distinct key, but in cases where that is not possible a “collision” is caused. Collisions are handled using two techniques. The first one is open addressing, and the second is called Chaining.
 
+Diagramatical view of hashtable
 
 ![Alt text](./images/img.png?raw=true "Title")
 
