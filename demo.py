@@ -27,7 +27,7 @@ class Htable():
 
 
 if __name__ == '__main__':
-    path = "./slate"
+    path = "./entertainment"
     htable = Htable(path)
     while True:
         terms = input("Search terms: ")
